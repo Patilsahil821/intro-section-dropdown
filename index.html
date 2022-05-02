@@ -292,6 +292,13 @@
             $('.animation-div').removeClass('animate')
           }, 500)
         })
+        $(window).load(function () {
+          if (window.innerWidth < 768) {
+            $('.right-side-img').attr('src', './images/image-hero-mobile.png')
+          } else {
+            $('.right-side-img').attr('src', './images/image-hero-desktop.png')
+          }
+        })
         $(window).on('resize', function () {
           if (window.innerWidth < 768) {
             $('.right-side-img').attr('src', './images/image-hero-mobile.png')
