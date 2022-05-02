@@ -1,0 +1,80 @@
+#sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 100%;
+  background-color: white;
+  padding: 1rem;
+  transform: translateX(100%);
+  transition: all 300ms ease-out;
+  display: none;
+  z-index: 3;
+  .animate {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    border-radius: 50%;
+    background-color: transparent;
+    z-index: -1;
+    animation: example 500ms;
+  }
+  .close-icon {
+    float: right;
+  }
+  ul {
+    clear: right;
+    li {
+      margin-bottom: 10px;
+      .sub-menu {
+        display: none;
+        margin: 0;
+        border-radius: 8px;
+        background-color: white;
+        padding: 13px;
+        li {
+          margin: 0;
+          svg {
+            margin-right: 5px;
+            width: 20px;
+            height: 15px;
+          }
+          &:not(:last-child) {
+            margin-bottom: 13px;
+          }
+        }
+      }
+    }
+  }
+  button {
+    background-color: transparent;
+    border: 1px solid transparent;
+    outline: 0;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    padding: 7px 0px;
+    margin-bottom: 10px;
+    &:hover {
+      border: 1px solid purple;
+    }
+  }
+  @include media(768px) {
+    display: block;
+  }
+}
+
+@keyframes example {
+  from {
+    transform: scale(0);
+    background-color: rgb(255, 255, 255, 0.4);
+  }
+  to {
+    transform: scale(40);
+    background-color: transparent;
+  }
+}

@@ -1,0 +1,63 @@
+@import './utils.scss';
+
+$AlmostWhite: hsl(0, 0%, 98%);
+$MediumGray: hsl(0, 0%, 41%);
+$AlmostBlack: hsl(0, 0%, 8%);
+
+* {
+  list-style: none;
+  text-decoration: none;
+  font-family: 'Epilogue', sans-serif;
+}
+i {
+  transition: all 0.2s;
+}
+ul,
+li,
+p,
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: $MediumGray;
+  text-decoration: none;
+  &:hover {
+    color: black;
+  }
+}
+.black-screen {
+  transition: all 0.3s;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.7);
+  @include media(768px) {
+    display: block;
+  }
+}
+body {
+  background-color: $AlmostWhite;
+  overflow-x: hidden;
+}
+main {
+  max-width: 1500px;
+  display: block;
+  margin: 0 auto;
+}
+body {
+  main {
+    @import './header.scss';
+    @import './sidebar.scss';
+    @import './banner.scss';
+  }
+}
+
+.rotate-arrow {
+  transform: rotate(-180deg);
+}

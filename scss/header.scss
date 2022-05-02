@@ -1,0 +1,90 @@
+#header {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 1rem;
+  .logo {
+    margin-top: 8px;
+  }
+  .items {
+    display: flex;
+    flex-grow: 1;
+    margin-left: 2rem;
+    li {
+      margin: 0 1rem;
+      position: relative;
+      .features-sub-menu {
+        display: none;
+        box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.4);
+        margin: 0;
+        margin-top: 1.5rem;
+        position: absolute;
+        border-radius: 8px;
+        background-color: white;
+        right: 0;
+        width: 140px;
+        padding: 13px;
+        li {
+          margin: 0;
+          svg {
+            margin-right: 5px;
+            width: 20px;
+            height: 15px;
+          }
+          &:not(:last-child) {
+            margin-bottom: 13px;
+          }
+        }
+      }
+      .company-sub-menu {
+        display: none;
+        position: absolute;
+        left: 0;
+        margin-top: 1.5rem;
+        box-shadow: 0px 0px 35px rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+        padding: 13px;
+        background-color: white;
+        width: 100px;
+        li {
+          margin: 0;
+          &:not(:last-child) {
+            margin-bottom: 13px;
+          }
+        }
+      }
+    }
+  }
+  .login,
+  .register {
+    margin-left: 1rem;
+    background-color: transparent;
+    padding: 7px 18px;
+    border: 1px solid transparent;
+    outline: 0;
+    border-radius: 8px;
+    &:hover {
+      border: 1px solid purple;
+    }
+  }
+  .menu-icon {
+    display: none;
+  }
+  @include media(768px) {
+    .logo {
+      flex-grow: 1;
+    }
+    .items {
+      display: none;
+    }
+    button {
+      display: none;
+    }
+    .menu-icon {
+      display: block;
+      border: 0;
+      background-color: transparent;
+      outline: 0;
+    }
+  }
+}
